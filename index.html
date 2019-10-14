@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>novoc 2</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&display=swap&subset=cyrillic-ext" rel="stylesheet">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" />
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=66242d36-c21f-4f8c-81fe-e7afe989beee&lang=ru_RU"
+  type="text/javascript"></script>
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/jQRangeSlider-min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+
+    <header class="main-header">
+      <div class="main-header__wrapper">
+        <button class="hamburger">&#9776;</button>
+        <button class="cross">&#735;</button>
+        <div class="main-header__intro">
+          <div class="main-header__logo">
+
+          </div>
+
+          <div class="main-header__contacts">
+
+            <div class="main-header__info">
+              <h5 class="main-header__cap">Агентство недвижимости</h5>
+              <p class="main-header__desc main-header__desc--address">Москва, «Беляево», ул. Миклухо-Маклая, д. 43</p>
+            </div>
+            <div class="main-header__info">
+              <h5 class="main-header__cap">+7 (495) 276-03-03</h5>
+              <p class="main-header__desc">Пн—Пт: с 09.00 до 21.00, Сб—Вс: с 10.00 до 17.00</p>
+            </div>
+
+          </div>
+
+
+          <a href="#" class="main-header__btn btn">Бесплатная консультация</a>
+        </div>
+        <nav class="main-header__nav menu ">
+          <ul class="main-header__list" >
+            <li class="main-header__item"><a href="#" class="main-header__link">новостройки </a> </li>
+            <li class="main-header__item"><a href="#" class="main-header__link">ЭЛИТНАЯ НЕДВИЖИМОСТЬ </a> </li>
+            <li class="main-header__item"><a href="#" class="main-header__link"> вторичная недвижимость</a></li>
+            <li class="main-header__item"><a href="#" class="main-header__link">коммерческая недвижимость</a> </li>
+            <li class="main-header__item"><a href="#" class="main-header__link">ипотека</a> </li>
+            <li class="main-header__item"><a href="#" class="main-header__link">УСЛУГИ</a> </li>
+            <li class="main-header__item"><a href="#" class="main-header__link">КОНТАКТЫ</a>   </li>
+            <li class="main-header__item main-header__item--search"><a href="#" class="main-header__link">Поиск</a> </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+  <div class="search">
+    <div class="search__wrapper">
+      <h2 class="search__title">Купить квартиру в новостройке</h2>
+      <a href="#" class="search__item search__item--call">Обратный звонок</a>
+      <a href="#" class="search__item search__item--show">Записаться на показ</a>
+      <div class="search__panel">
+        <div class="search__price">
+          <span class="search__cap">Стоимость, млн руб</span>
+          <div class="search__container">
+            <div id="slider" class="slider">
+              <div class="thumbLeft"><span id="valueLeft">1</span></div>
+              <div class="thumbRight"><span id="valueRight">69</span></div>
+          </div>
+          </div>
+
+        </div>
+        <div class="search__region">
+          <input id="Moscow" name='region' type="radio" class="search__input"> <label for="Moscow">Москва и Новая Москва</label>
+          <input id="Region" name='region' type="radio" class="search__input"><label for="Region">Московская область</label>
+        </div>
+          <div class="search__options">
+            <div class="search__opt">
+              <select name="" id="" class="search__select" placeholder=''>
+                <option value="" disabled selected>Станция метро</option>
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </select>
+            </div>
+              <div class="search__opt">
+                <select name="" id="" class="search__select" placeholder=''>
+                  <option value="" disabled selected>Тип жилья</option>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+              <div class="search__opt">
+                <select name="" id="" class="search__select">
+                  <option value="" disabled selected>Площадь</option>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+              <div class="search__opt">
+                <select name="" id="" class="search__select">
+                  <option value="" disabled selected>Тип отделки</option>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+              <div class="search__opt">
+                <select name="" id="" class="search__select">
+                  <option value="" disabled selected>Срок сдачи</option>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+
+            </div>
+            <a href="#" class="search__btn btn">Найти</a>
+          </div>
+
+
+        </div>
+    </div>
+
+
+  <div class="map">
+    <div class="map__wrapper">
+      <div class="map__container">
+        <div id="map" class="map" style="width: 100%; height: 500px;"></div>
+      </div>
+  </div>
+
+
+  <div class="offers">
+    <div class="offers__wrapper">
+
+      <div class="offers__item">
+        <div class="offers__info">
+          <h4 class="offers__cap">Микрорайон Некрасовка</h4>
+          <p class="offers__adr">
+            <span class="offers__metro offers__metro--green">Марьина роща</span>
+            <span class="offers__time">2 минуты пешком</span>
+            <span class="offers__fulladr">Москва, ЮВАО, район Некрасовка, Люберецкие поля аэрации</span>
+          </p>
+          <div class="offers__rooms">
+            <p class="offers__flat">
+              <span class="offers__room">1-комнатные от 30 м² </span><span class="offers__flat-price">6 900 000 р.</span>
+            </p>
+            <p class="offers__flat">
+              <span class="offers__room">1-комнатные от 75 м²</span> <span class="offers__flat-price">от 22 900 000 р.</span>
+            </p>
+            <p class="offers__flat">
+              <span class="offers__room">3-комнатные от 74 м²</span> <span class="offers__flat-price">от 17 400 000 р.</span>
+            </p>
+            <p class="offers__flat">
+              <span class="offers__room">4-комнатные от 177 м²</span> <span class="offers__flat-price">от 63 200 000 р.</span>
+            </p>
+          </div>
+
+          <div class="offers__adds">
+            <p class="offers__opt">
+              <span class="offers__option">Стадия готовности:</span><span class="offers__opt-value">Монтаж завершен. Ввод дома в эксплуатацию в 4 квартале 2019 года / На заселении.</span>
+            </p>
+            <p class="offers__opt">
+              <span class="offers__option">Ипотека:</span><span class="offers__opt-value">Есть</span>
+            </p>
+            <p class="offers__opt">
+              <span class="offers__option">Отделка:</span><span class="offers__opt-value">Возможна</span></p>
+          </div>
+
+          <div class="offers__promo">
+            <ul class="offers__list">
+              <li class="offers__list-item offers__list-item--mortage">Ипотека</li>
+              <li class="offers__list-item offers__list-item--plan">Рассрочка</li>
+              <li class="offers__list-item offers__list-item--discount">Скидки</li>
+              <li class="offers__list-item offers__list-item--subsidies">субсидии</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="offers__look">
+          <img src="img/nekrasova.jpg" alt="" class="offers__img">
+          <div class="offers__bonuses">
+            <span class="offers__bonus offers__bonus--gift">Подарочные сертификаты</span>
+            <span class="offers__bonus offers__bonus--action">Акция</span>
+          </div>
+          <a href="#" class="offers__link btn">Подробнее</a>
+        </div>
+
+
+
+      </div>
+
+
+      <div class="offers__item">
+
+        <div class="offers__info">
+          <h4 class="offers__cap">ДОМ «Флагман»</h4>
+          <p class="offers__adr">
+            <span class="offers__metro offers__metro--gray">Выхино</span>
+            <span class="offers__time">10 минут на транспорте</span>
+            <span class="offers__fulladr">Московская область, г. Долгопрудный, ул. Набережная</span>
+          </p>
+          <div class="offers__rooms">
+            <p class="offers__flat">
+              <span class="offers__room">1-комнатные от 30 м² </span><span class="offers__flat-price">от 3 239 397 р.</span>
+            </p>
+            <p class="offers__flat">
+              <span class="offers__room">1-комнатные от 75 м²</span> <span class="offers__flat-price">от 4 734 000 р.</span>
+            </p>
+            <p class="offers__flat">
+              <span class="offers__room">3-комнатные от 74 м²</span> <span class="offers__flat-price">от 6 512 440 р.</span>
+            </p>
+          </div>
+
+          <div class="offers__adds">
+            <p class="offers__opt">
+              <span class="offers__option">Стадия готовности:</span><span class="offers__opt-value">Введен в эксплуатацию / На заселении.</span>
+            </p>
+            <p class="offers__opt">
+              <span class="offers__option">Ипотека:</span><span class="offers__opt-value">Есть</span>
+            </p>
+            <p class="offers__opt">
+              <span class="offers__option">Отделка:</span><span class="offers__opt-value">Возможна</span></p>
+          </div>
+
+          <div class="offers__promo">
+            <ul class="offers__list">
+              <li class="offers__list-item offers__list-item--mortage">Ипотека</li>
+              <li class="offers__list-item offers__list-item--plan">Рассрочка</li>
+              <li class="offers__list-item offers__list-item--discount">Скидки</li>
+              <li class="offers__list-item offers__list-item--subsidies">субсидии</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="offers__look">
+          <img src="img/flagman.jpg" alt="" class="offers__img">
+
+          <a href="#" class="offers__link btn">Подробнее</a>
+        </div>
+
+      </div>
+
+
+      <div class="offers__item">
+
+        <div class="offers__info">
+           <h4 class="offers__cap">ЖК «Лайково»</h4>
+          <p class="offers__adr">
+            <span class="offers__metro offers__metro--blue">Ховрино</span>
+            <span class="offers__time">15 минут на транспорте</span>
+            <span class="offers__fulladr">Московская область, г. Долгопрудный, ул. Дирижабельная</span>
+          </p>
+          <div class="offers__rooms">
+            <p class="offers__flat">
+              <span class="offers__room">1-комнатные от 30 м² </span><span class="offers__flat-price">6 900 000 р.</span>
+            </p>
+            <p class="offers__flat">
+              <span class="offers__room">1-комнатные от 75 м²</span> <span class="offers__flat-price">от 22 900 000 р.</span>
+            </p>
+            <p class="offers__flat">
+              <span class="offers__room">3-комнатные от 74 м²</span> <span class="offers__flat-price">от 17 400 000 р.</span>
+            </p>
+            <p class="offers__flat">
+              <span class="offers__room">4-комнатные от 177 м²</span> <span class="offers__flat-price">от 63 200 000 р.</span>
+            </p>
+          </div>
+
+
+          <div class="offers__adds">
+            <p class="offers__opt">
+              <span class="offers__option">Стадия готовности:</span><span class="offers__opt-value">Монтаж завершен. Ввод дома в эксплуатацию в 4 квартале 2019 года / На заселении.</span>
+            </p>
+            <p class="offers__opt">
+              <span class="offers__option">Ипотека:</span><span class="offers__opt-value">Есть</span>
+            </p>
+            <p class="offers__opt">
+              <span class="offers__option">Отделка:</span><span class="offers__opt-value">Возможна</span></p>
+          </div>
+
+          <div class="offers__promo">
+            <ul class="offers__list">
+              <li class="offers__list-item offers__list-item--mortage">Ипотека</li>
+              <li class="offers__list-item offers__list-item--plan">Рассрочка</li>
+              <li class="offers__list-item offers__list-item--discount">Скидки</li>
+              <li class="offers__list-item offers__list-item--subsidies">субсидии</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="offers__look">
+          <img src="img/like.jpg" alt="" class="offers__img">
+          <div class="offers__bonuses">
+            <span class="offers__bonus offers__bonus--gift">Подарочные сертификаты</span>
+
+          </div>
+          <a href="#" class="offers__link btn">Подробнее</a>
+        </div>
+
+      </div>
+
+      <a href="#" class="offers__btn btn">Все предложения</a>
+
+    </div>
+  </div>
+
+
+  <div class="about">
+    <div class="about__wrapper">
+      <div class="about__content">
+        <h2 class="about__title">Офис Миэль «В Беляево»</h2>
+        <p class="about__promo">
+          — это команда профессиональных экспертов и агентов по недвижимости с большим багажом риелторской и юридической практики. Основные направления Миэль «В Беляево» – это продажа элитной недвижимости и квартир в новостройках.
+        </p>
+        <div class="about__info">
+          <div class="about__cap">Наши специалисты выполняют широкий спектр операций, связанных с недвижимостью:</div>
+          <ul class="about__features">
+            <li class="about__item about__item--flats">Подбор
+квартир</li>
+            <li class="about__item about__item--arbitr">Проверка застройщика
+и/или собственника</li>
+            <li class="about__item about__item--formalization">Проверка и оформление
+документов</li>
+            <li class="about__item about__item--support">Юридическая
+поддержка</li>
+            <li class="about__item about__item--maintance">Сопровождение
+сделки</li>
+          </ul>
+        </div>
+        <p class="about__outro">
+          Если вы хотите купить квартиру в элитном жилом комплексе, то мы поможем вам это сделать не только максимально комфортно и безопасно, но и выгодно – мы всегда сообщаем о самых интересных акциях и выбираем действительно горячие предложения. Кроме того, мы готовы помочь оформить выгодную ипотеку. Каждый клиент становится для нас партнером, которого мы готовы защитить от всевозможных рисков и поддержать на всех этапах проведения сделки.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="main-footer__wrapper">
+      <p class="main-footer__copy">
+        © 2009–2016 Офис «В Беляево». При использовании материалов ссылка на сайт обязательна
+      </p>
+      <p class="main-footer__dev">
+        Разработка и продвижение — «ЭВРИКА»
+      </p>
+    </div>
+  </footer>
+
+
+
+
+  </div>
+
+
+
+<script >
+    let value = document.getElementById('value');
+let thumbLeft = slider.querySelector('.thumbLeft');
+let thumbRight = slider.querySelector('.thumbRight');
+
+
+
+  thumbLeft.onmousedown = function(event){
+    event.preventDefault;
+
+    let shiftX = event.clientX - thumbLeft.getBoundingClientRect().left;
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+
+    function onMouseMove(event){
+
+      let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
+
+      if(newLeft < 0 - thumbLeft.getBoundingClientRect().width){
+        newLeft = - thumbLeft.getBoundingClientRect();
+      }else if(newLeft > thumbRight.getBoundingClientRect().left - slider.getBoundingClientRect().left -
+        thumbRight.getBoundingClientRect().width){
+        newLeft = thumbRight.getBoundingClientRect().left - slider.getBoundingClientRect().left -
+        thumbRight.getBoundingClientRect().width;
+      }
+
+      thumbLeft.style.left = newLeft + 'px';
+
+      function writeValue(max=100){
+        let label = document.getElementById('valueLeft');
+        let value = (thumbLeft.getBoundingClientRect().right - slider.getBoundingClientRect().left)/
+          slider.getBoundingClientRect().width * max;
+        label.innerText = Math.round(value);
+      }
+
+      writeValue();
+
+    }
+
+
+    function onMouseUp() {
+      document.removeEventListener('mouseup', onMouseUp);
+      document.removeEventListener('mousemove', onMouseMove);
+    }
+
+
+  }
+
+
+  thumbRight.onmousedown = function(event){
+    event.preventDefault;
+
+    let shiftX = event.clientX - thumbRight.getBoundingClientRect().left;
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+
+    function onMouseMove(event){
+
+      let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
+
+      if(newLeft > slider.getBoundingClientRect().width){
+        newLeft = slider.getBoundingClientRect().width;
+      }else if(newLeft <
+       thumbLeft.getBoundingClientRect().right - slider.getBoundingClientRect().left){
+        newLeft = thumbLeft.getBoundingClientRect().right - slider.getBoundingClientRect().left;
+      }
+
+      thumbRight.style.left = newLeft + 'px';
+
+      function writeValue(max=100){
+        let label = document.getElementById('valueRight');
+        let value = (thumbRight.getBoundingClientRect().left - slider.getBoundingClientRect().left)/
+          slider.getBoundingClientRect().width * max;
+        label.innerText = Math.round(value);
+      }
+
+      writeValue();
+
+    }
+
+
+    function onMouseUp() {
+      document.removeEventListener('mouseup', onMouseUp);
+      document.removeEventListener('mousemove', onMouseMove);
+    }
+  }
+
+
+
+
+  thumbLeft.ondragstart = function() {
+    return false;
+  };
+
+  thumbRight.ondragstart = function(){
+    return false;
+  }
+
+</script>
+
+<script src="js/map.js"></script>
+<script src="js/menu.js"></script>
+
+</body>
+</html>
